@@ -36,9 +36,7 @@ function loopReverse(str) {
 function reverse(str) {
     const arr = str.split('')
 
-    return arr.reduce((reversed, character) => {
-        return character + reversed
-    }, '')
+    return arr.reduce((reversed, character) => character + reversed, '')
 }
 
 module.exports = reverse;

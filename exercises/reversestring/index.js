@@ -16,4 +16,11 @@ function reverse(str) {
     return solution
 }
 
+function reverse2(str) {
+    return str
+    .split('')
+    .reverse()
+    .join('')
+}
+
 module.exports = reverse;

@@ -33,3 +33,5 @@ function everyPalindrome(str) {
 }
 
 module.exports = palindrome;
+
+

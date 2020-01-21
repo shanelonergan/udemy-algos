@@ -17,10 +17,8 @@ function maxChar(str) {
         }
     })
 
-    debugger
-
     return Object.keys(output).reduce((char1, char2) => {
-        output[char1] > output[char2] ? char1 : char2
+        return output[char1] > output[char2] ? char1 : char2
     })
 }
 

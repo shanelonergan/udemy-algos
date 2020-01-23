@@ -13,7 +13,7 @@ function chunk(array, size) {
     let output = []
     let counter = 0
 
-    for (let i = 0; i < array.length; i++) {
+    for (let element of array) {
 
         if (counter >= array.length) {
             break
@@ -33,7 +33,17 @@ function chunk(array, size) {
 function chunk2(array, size) {
     const chunked = []
 
-    for (let element of array)
+    for (let element of array) {
+        const last = chunked[chunked.length - 1]
+
+        if (!last || last.length === size) {
+            chunked.push([element])
+        } else {
+            last.push(element)
+        }
+    }
+
+    return chunked
 }
 
 module.exports = chunk;

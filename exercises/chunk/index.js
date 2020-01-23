@@ -11,14 +11,23 @@
 function chunk(array, size) {
 
     let output = []
+    let counter = 0
 
-    for (let i = 0; i < array.length; i + size) {
+    for (let i = 0; i < array.length; i++) {
 
-        const chunk = array.slice(i, size)
+        if (counter >= array.length) {
+            break
+        }
+
+        const chunk = array.slice(counter, counter + size)
         console.log(chunk)
 
         output.push(chunk)
+        counter += size
     }
+
+    console.log(output)
+    return output
 }
 
 module.exports = chunk;

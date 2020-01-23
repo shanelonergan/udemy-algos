@@ -20,17 +20,27 @@ function chunk(array, size) {
         }
 
         const chunk = array.slice(counter, counter + size)
-        console.log(chunk)
 
         output.push(chunk)
         counter += size
     }
 
-    console.log(output)
     return output
 }
 
 function chunk2(array, size) {
+    const output = []
+    let index = 0
+
+    while (index < array.length) {
+        output.push(array.slice(index, index + size))
+        index += size
+    }
+
+    return output
+}
+
+function chunk3(array, size) {
     const chunked = []
 
     for (let element of array) {

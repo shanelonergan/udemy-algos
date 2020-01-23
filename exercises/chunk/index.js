@@ -30,4 +30,10 @@ function chunk(array, size) {
     return output
 }
 
+function chunk2(array, size) {
+    const chunked = []
+
+    for (let element of array)
+}
+
 module.exports = chunk;

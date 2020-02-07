@@ -15,6 +15,18 @@ function anagrams(stringA, stringB) {
         return str.replace(regex, '').toLowerCase()
     }
 
+    const charMap = (str) => {
+        let output = {}
+
+        str.forEach(letter => {
+            if (Object.keys(output).includes(letter)) {
+                output[letter]++
+            } else {
+                output[letter] = 1
+            }
+        })
+    }
+
 }
 
 module.exports = anagrams;

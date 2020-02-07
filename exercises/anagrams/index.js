@@ -9,23 +9,41 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
+    let output = true
     const regex = /[^\w]/g
 
     const stripStr = (str, regex) => {
-        return str.replace(regex, '').toLowerCase()
+        return str.replace(regex, '').toLowerCase().split('')
     }
 
-    const charMap = (str) => {
+    const charMap = (arr) => {
         let output = {}
 
-        str.forEach(letter => {
+        arr.forEach(letter => {
             if (Object.keys(output).includes(letter)) {
                 output[letter]++
             } else {
                 output[letter] = 1
             }
         })
+        return output
     }
+    const strArr = stripStr(stringA, regex)
+    const charMapA = charMap(strArr)
+    const charMapB = charMap(stripStr(stringB, regex))
+    console.log(charMapA, charMapB)
+
+    if (Object.keys(charMapA).length !== Object.keys(charMapB).length) {
+        output = false
+    } else {
+        for (const letter in charMapA) {
+            if (charMapA[letter] !== charMapB[letter]) {
+                output = false
+            }
+        }
+    }
+
+    return output
 
 }
 

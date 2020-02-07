@@ -47,7 +47,7 @@ function anagrams(stringA, stringB) {
 
 }
 
-function anagrams2(str) {
+function anagrams2(stringA, stringB) {
     function buildCharMap() {
         const charMap = {}
 
@@ -72,6 +72,18 @@ function anagrams2(str) {
     }
 
     return true
+}
+
+function anagrams3(stringA, stringB) {
+    function cleanStr(str) {
+        return str
+            .replace(/[^\w]/g, '').toLowerCase()
+            .split('')
+            .sort()
+            .join('')
+    }
+
+    return cleanStr(stringA) === cleanStr(stringB)
 }
 
 module.exports = anagrams;

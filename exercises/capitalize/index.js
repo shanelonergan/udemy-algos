@@ -12,9 +12,12 @@ function capitalize(str) {
     let output = []
 
     for(let word of arr) {
-        let capitalWord = ''
-        word
+        let capitalWord = word[0].toUpperCase() + word.slice(1)
+
+        output.push(capitalWord)
     }
+
+    return output.join(' ')
 }
 
 module.exports = capitalize;

@@ -17,7 +17,9 @@ function capitalize(str) {
         output.push(capitalWord)
     }
 
-    return output.join(' ')
+    const capitalSentance = output.join(' ')
+
+    return capitalSentance
 }
 
 function capitalize2(str) {

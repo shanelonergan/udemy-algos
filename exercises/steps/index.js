@@ -20,9 +20,12 @@
 function steps(n) {
     let output = ''
 
-    for (i = 1; i <= n; i++) {
+    for (let i = 1; i <= n; i++) {
         output += '#'
-        console.log('output')
+        const numSpaces = n - output.length
+        const spaces = ' '.repeat(numSpaces)
+
+        console.log(output + spaces)
     }
 }
 

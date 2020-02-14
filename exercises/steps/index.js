@@ -17,15 +17,35 @@
 //       '### '
 //       '####'
 
-function steps(n) {
-    let output = ''
+// function steps(n) {
+//     let output = ''
 
-    for (let i = 1; i <= n; i++) {
-        output += '#'
-        const numSpaces = n - output.length
-        const spaces = ' '.repeat(numSpaces)
+//     for (let i = 1; i <= n; i++) {
+//         output += '#'
+//         const numSpaces = n - output.length
+//         // const spaces = ' '.repeat(numSpaces)
+//         let spaces = ''
+//         for (let i = 1; i <= numSpaces; i++) {
+//             spaces += ' '
+//         }
 
-        console.log(output + spaces)
+//         console.log(output + spaces)
+//     }
+// }
+
+const steps = (n) => {
+    for (let row = 0; row < n; row++) {
+        let stair = ''
+
+        for (let column = 0; column < n; column++) {
+            if (column <= row) {
+                stair += '#'
+            } else {
+                stair += ' '
+            }
+        }
+
+        console.log(stair)
     }
 }
 

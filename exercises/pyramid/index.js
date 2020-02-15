@@ -15,20 +15,26 @@
 //       '#####'
 
 function pyramid(n) {
-        const rowLength = n * 2 - 1
+    const rowLength = n * 2 - 1
+    // console.log(rowLength)
+    let output = ''
+    let spaces
 
-    for (let row = 0; row < rowLength; row++) {
-        let stair = ''
+    for (let i = 1; i <= n; i++) {
+        if (i === 1) {
+            output += '#'
+        } else {
+            output += '##'
+        }
+        const numSpaces = (rowLength - output.length) / 2
 
-        for (let column = 0; column < n; column++) {
-            if (column <= row) {
-                stair += '#'
-            } else {
-                stair += ' '
-            }
+        if (numSpaces > 0) {
+            spaces = ' '.repeat(numSpaces)
+        }  else {
+            spaces = ''
         }
 
-        console.log(stair)
+        console.log(spaces + output + spaces)
     }
 }
 

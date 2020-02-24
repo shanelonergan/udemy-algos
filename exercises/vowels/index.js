@@ -19,7 +19,20 @@ function vowels(str) {
     });
 
     return counter
+}
 
+function vowels2(str) {
+    let count = 0
+    const checker = 'aeiou'
+
+    for (let i = 0; i < str.length; i++) {
+        const letter = str[i];
+        if (checker.includes(letter)) {
+            count ++
+        }
+    }
+
+    return count
 }
 
 module.exports = vowels;

@@ -14,29 +14,29 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {
-    const rowLength = n * 2 - 1
-    // console.log(rowLength)
-    let output = ''
-    let spaces
+// function pyramid(n) {
+//     const rowLength = n * 2 - 1
+//     // console.log(rowLength)
+//     let output = ''
+//     let spaces
 
-    for (let i = 1; i <= n; i++) {
-        if (i === 1) {
-            output += '#'
-        } else {
-            output += '##'
-        }
-        const numSpaces = (rowLength - output.length) / 2
+//     for (let i = 1; i <= n; i++) {
+//         if (i === 1) {
+//             output += '#'
+//         } else {
+//             output += '##'
+//         }
+//         const numSpaces = (rowLength - output.length) / 2
 
-        if (numSpaces > 0) {
-            spaces = ' '.repeat(numSpaces)
-        }  else {
-            spaces = ''
-        }
+//         if (numSpaces > 0) {
+//             spaces = ' '.repeat(numSpaces)
+//         }  else {
+//             spaces = ''
+//         }
 
-        console.log(spaces + output + spaces)
-    }
-}
+//         console.log(spaces + output + spaces)
+//     }
+// }
 
 function pyramid2(n) {
     const midpoint = Math.floor((2 * n - 1) / 2)
@@ -56,6 +56,25 @@ function pyramid2(n) {
     }
 }
 
-pyramid(5)
+function pyramid(n, row = 0, level = '') {
+    const midpoint = Math.floor((2 * n - 1) / 2)
+
+    if (n === row) {
+        return
+    }
+
+    if (level.length === 2 * n - 1) {
+        console.log(level)
+        pyramid(n, row + 1)
+        return
+    }
+
+    if (midpoint - row <= level.length && midpoint + row >= level.length) {
+        level += '#'
+    } else {
+        level += ' '
+    }
+    pyramid(n, row, level)
+}
 
 module.exports = pyramid;

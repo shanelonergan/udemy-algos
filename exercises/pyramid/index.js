@@ -51,7 +51,11 @@ function pyramid2(n) {
                 level += ' '
             }
         }
+
+        console.log(level)
     }
 }
+
+pyramid(5)
 
 module.exports = pyramid;

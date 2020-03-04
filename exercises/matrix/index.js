@@ -32,20 +32,24 @@ function matrix(n) {
 
     while (startColumn <= endColumn && startRow <= endRow) {
 
-        for (let i = 0; i < endColumn; i++) {
-            results[startRow][i] = counter
-            counter++
+
+        function fillMatrix() {
+            for (let i = 0; i < endColumn; i++) {
+                results[startRow][i] = counter
+                counter++
+            }
+
+            console.log(results)
+            startRow++
+
+            for (let i = 1; i < endRow; i++) {
+                results[i][endColumn] = counter
+                counter++
+            }
+
+            endRow--
         }
 
-        console.log(results)
-        startRow++
-
-        for (let i = 1; i < endRow; i++) {
-            results[i][endColumn] = counter
-            counter++
-        }
-
-        endRow--
 
     }
 

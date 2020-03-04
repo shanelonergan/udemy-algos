@@ -47,12 +47,23 @@ function matrix(n) {
                 counter++
             }
 
+            // for (let i = endRow; i >= startColumn; i--) {
+            //     results[endRow][i] = counter
+            //     counter++
+            // }
+
             endRow--
         }
 
+        fillMatrix()
 
     }
 
+    // function printResults() {
+    //     results.forEach(array => {
+    //         console.log(array)
+    //     });
+    // }
     console.log(results)
     return results
 }

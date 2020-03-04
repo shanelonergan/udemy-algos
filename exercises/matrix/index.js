@@ -20,12 +20,14 @@ function matrix(n) {
     let results = []
 
     for (let i = 1; i < n; i++) {
-        results.push([])
+        results.push(new Array(n))
     }
 
+    console.log('starting array:', results)
+
     let startRow = 0
-    let endRow = 0
-    let startColumn = n - 1
+    let endRow = n - 1
+    let startColumn = 0
     let endColumn = n - 1
 
     while (startColumn <= endColumn && startRow <= endRow) {
@@ -35,9 +37,10 @@ function matrix(n) {
             counter++
         }
 
+        console.log(results)
         startRow++
 
-        for (let i = 0; i < endRow; i++) {
+        for (let i = 1; i < endRow; i++) {
             results[i][endColumn] = counter
             counter++
         }

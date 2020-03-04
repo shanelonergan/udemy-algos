@@ -23,6 +23,11 @@ function matrix(n) {
         results.push([])
     }
 
+    let startRow = 0
+    let endRow = 0
+    let startColumn = n - 1
+    let endColumn = n - 1
+
     console.log(results)
     return results
 }

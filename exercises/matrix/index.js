@@ -28,6 +28,24 @@ function matrix(n) {
     let startColumn = n - 1
     let endColumn = n - 1
 
+    while (startColumn <= endColumn && startRow <= endRow) {
+
+        for (let i = 0; i < endColumn; i++) {
+            results[startRow][i] = counter
+            counter++
+        }
+
+        startRow++
+
+        for (let i = 0; i < endRow; i++) {
+            results[i][endColumn] = counter
+            counter++
+        }
+
+        endRow--
+
+    }
+
     console.log(results)
     return results
 }

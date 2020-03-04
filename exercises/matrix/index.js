@@ -20,7 +20,7 @@ function matrix(n) {
     let results = []
 
     for (let i = 1; i < n; i++) {
-        results.push(new Array(n))
+        results.push(new Array(n - 1))
     }
 
     console.log('starting array:', results)

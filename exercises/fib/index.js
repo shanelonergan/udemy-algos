@@ -12,19 +12,19 @@ function fib(n) {
     let output = []
 
     for (let i = 0; i <= n; i++) {
-        const last1 = output[i - 1]
-        const last2 = output[i - 2]
-
         if (i < 2) {
             output.push(i)
+        } else {
+            const last1 = output[i - 1]
+            const last2 = output[i - 2]
+            console.log(last1, last2)
+
+            const fibNum = last1 + last2
+            output.push(fibNum)
         }
-
-        const fibNum = last1 + last2
-
-        output.push(fibNum)
     }
 
-    return output.last
+    return output[n]
 }
 
 module.exports = fib;

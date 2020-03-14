@@ -27,4 +27,17 @@ function fib(n) {
     return output[n]
 }
 
+function fib2(n) {
+    let output = [0, 1]
+
+    for (let i = 2; i <= n; i++) {
+        const a = output[i - 1]
+        const b = output[i - 2]
+
+        output.push(a + b)
+    }
+
+    return output[n]
+}
+
 module.exports = fib;

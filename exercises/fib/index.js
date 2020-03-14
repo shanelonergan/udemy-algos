@@ -40,4 +40,12 @@ function fib2(n) {
     return output[n]
 }
 
+function recursiveFib(n) {
+    if (n < 2) {
+        return n
+    }
+
+    return fib(n - 1) + fib(n - 2)
+}
+
 module.exports = fib;

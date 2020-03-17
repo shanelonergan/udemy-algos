@@ -45,7 +45,7 @@ function recursiveFib(n) {
         return n
     }
 
-    return fib(n - 1) + fib(n - 2)
+    return recursiveFib(n - 1) + recursiveFib(n - 2)
 }
 
 function memoize(fn) {
@@ -62,6 +62,6 @@ function memoize(fn) {
 
 }
 
-const fastFib = memoize(recursiveFib)
+recursiveFib = memoize(recursiveFib)
 
 module.exports = fib;

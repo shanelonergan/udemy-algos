@@ -48,4 +48,12 @@ function recursiveFib(n) {
     return fib(n - 1) + fib(n - 2)
 }
 
+function memoize(function) {
+    const cache = {}
+
+    return function()
+}
+
+const fastFib = memoize(recursiveFib)
+
 module.exports = fib;

@@ -48,10 +48,18 @@ function recursiveFib(n) {
     return fib(n - 1) + fib(n - 2)
 }
 
-function memoize(function) {
+function memoize(fn) {
     const cache = {}
 
-    return function()
+    return function(...args) {
+        if (cache[args]) {
+            return cache[args]
+        }
+
+        const result = fn.apply(this, args)
+        cache[args] = result
+    }
+
 }
 
 const fastFib = memoize(recursiveFib)

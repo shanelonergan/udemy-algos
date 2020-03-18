@@ -17,8 +17,8 @@ class Queue {
         this.data.unshift(record)
     }
 
-    remove(record) {
-        this.data.pop(record)
+    remove() {
+        return this.data.pop()
     }
 }
 

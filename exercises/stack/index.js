@@ -16,15 +16,15 @@ class Stack {
         this.data = []
     }
 
-    function push(item) {
+    push(item) {
         this.data.push(item)
     }
 
-    function pop() {
+    pop() {
         return this.data.pop()
     }
 
-    function peek() {
+    peek() {
         return this.data[this.data.length - 1]
     }
 

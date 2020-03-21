@@ -48,6 +48,8 @@ function weave2() {
             q.add(sourceTwo.remove())
         }
     }
+
+    return q
 }
 
 module.exports = weave;

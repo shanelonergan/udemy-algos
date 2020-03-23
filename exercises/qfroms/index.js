@@ -73,7 +73,22 @@ class Queue2() {
             this.second.push(record)
         }
 
-        const record = this.second.pop
+        const record = this.second.pop()
+
+        while(this.second.peek()) {
+            this.first.push(this.second.pop())
+        }
+
+        return record
+    }
+
+        peek() {
+        while(this.first.peek()) {
+            const record = this.first.pop()
+            this.second.push(record)
+        }
+
+        const record = this.second.peek()
 
         while(this.second.peek()) {
             this.first.push(this.second.pop())

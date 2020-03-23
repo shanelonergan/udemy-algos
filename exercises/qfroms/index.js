@@ -15,8 +15,6 @@
 const Stack = require('./stack');
 
 class Queue {
-    s1 = new Stack
-    s2 = new stack
 
     constructor(){
         this.data = new Stack
@@ -24,6 +22,36 @@ class Queue {
 
     add(record) {
         this.data.push(record)
+    }
+
+    remove() {
+        const temp = new Stack
+        while(this.data.peek()) {
+            temp.push(this.data.pop())
+        }
+
+        const item = temp.pop()
+
+        while(temp.peek()) {
+            this.data.push(temp.pop())
+        }
+
+        return item
+    }
+
+    peek() {
+        const temp = new Stack
+        while(this.data.peek()) {
+            temp.push(this.data.pop())
+        }
+
+        const item = temp.peek()
+
+        while(temp.peek()) {
+            this.data.push(temp.pop())
+        }
+
+        return item
     }
 
 }

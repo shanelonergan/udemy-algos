@@ -56,4 +56,31 @@ class Queue {
 
 }
 
+class Queue2() {
+
+    constructor() {
+        this.first = new Stack
+        this.second = new Stack
+    }
+
+    add(record) {
+        this.first.push(record)
+    }
+
+    remove() {
+        while(this.first.peek()) {
+            const record = this.first.pop()
+            this.second.push(record)
+        }
+
+        const record = this.second.pop
+
+        while(this.second.peek()) {
+            this.first.push(this.second.pop())
+        }
+
+        return record
+    }
+}
+
 module.exports = Queue;

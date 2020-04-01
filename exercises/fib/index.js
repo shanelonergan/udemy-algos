@@ -17,13 +17,12 @@ function fib(n) {
         } else {
             const last1 = output[i - 1]
             const last2 = output[i - 2]
-            console.log(last1, last2)
 
             const fibNum = last1 + last2
             output.push(fibNum)
         }
     }
-
+    console.log(output[n])
     return output[n]
 }
 

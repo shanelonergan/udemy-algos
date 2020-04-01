@@ -15,12 +15,16 @@ class LinkedList {
     }
 
     insertFirst(data) {
-        if (this.head) {
-            const newNode = new Node(data, this.head)
-            this.head = newNode
-        } else {
-            this.head = new Node(data)
-        }
+        // My soln (working)
+        // if (this.head) {
+        //     const newNode = new Node(data, this.head)
+        //     this.head = newNode
+        // } else {
+        //     this.head = new Node(data)
+        // }
+
+        // Course soln
+        this.head = new Node(data, this.head)
     }
 
     size() {

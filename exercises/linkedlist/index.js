@@ -60,6 +60,11 @@ class LinkedList {
     }
 
     getLast() {
+        // do we need this?
+        if(!this.head) {
+            return null
+        }
+
         let node = this.head
 
         while(node.next) {
@@ -67,6 +72,10 @@ class LinkedList {
         }
 
         return node
+    }
+
+    clear() {
+        this.head = null
     }
 }
 

@@ -137,6 +137,46 @@ class LinkedList {
                 return node
             }
         }
+
+        // Course soln
+        // let counter = 0
+        // let node = this.head
+
+        // while(node {
+        //     if(counter === index) {
+        //         return node
+        //     }
+        //     counter++
+        //     node = node.next
+        // })
+
+        // return null
+    }
+
+    removeAt(int) {
+        if(!this.head) {
+            return null
+        }
+        if (int === 0) {
+            this.head = this.head.next
+        }
+        if (int > this.size()) {
+            return null
+        }
+
+        let counter = 0
+        let node = this.head
+        let previous
+
+        while(node.next) {
+            counter++
+            previous = node
+            node = node.next
+
+            if(counter === int) {
+                previous.next = node.next
+            }
+        }
     }
 }
 

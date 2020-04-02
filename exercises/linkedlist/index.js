@@ -107,6 +107,10 @@ class LinkedList {
 
         previous.next = null
     }
+
+    insertLast(data) {
+        this.getLast().next = new Node(data)
+    }
 }
 
 module.exports = { Node, LinkedList };

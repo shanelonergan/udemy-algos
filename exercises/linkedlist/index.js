@@ -196,23 +196,23 @@ class LinkedList {
     }
 
     insertAt(data, int) {
-        const newNode = new Node(data)
-        if(!this.head) {
-            this.head = newNode
-        }
-        if (int === 0) {
-            newNode.next = this.head
-            this.head = newNode
-        }
-        if (int > this.size()) {
-            this.insertLast(data)
-        }
 
-        const previous = this.getAt(int - 1)
-        if (!previous || !previous.next) {
+        if(!this.head) {
+            this.head = new Node(data)
             return
         }
-        previous.next = previous.next.next
+        if (int === 0) {
+            this.head = new Node(data, this.head)
+            return
+        }
+
+        const previous = this.getAt(int - 1) || this.getLast()
+        const current = this.getAt(int)
+        if (!previous) {
+            this.head = new Node (data, current)
+            return
+        }
+        previous.next = new Node(data, current)
     }
 }
 

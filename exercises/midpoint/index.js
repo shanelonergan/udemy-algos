@@ -27,6 +27,15 @@ function midpoint(list) {
             return slow
         }
     }
+
+    // Course Soln
+    // let slow = fast = list.getFirst()
+    // while(fast.next && fast.next.next) {
+    //     slow = slow.next
+    //     fast = fast.next.next
+    // }
+    // return slow
+
 }
 
 module.exports = midpoint;

@@ -13,28 +13,29 @@
 //   midpoint(l); // returns { data: 'b' }
 
 function midpoint(list) {
-    let slow = list.head
-    let fast = list.head
+    // my soln
+    // let slow = list.head
+    // let fast = list.head
 
-    while (fast.next) {
-        if(!list.head.next.next){
-            return list.head
-        }
-        slow = slow.next
-        fast = fast.next.next || fast.next
+    // while (fast.next) {
+    //     if(!list.head.next.next){
+    //         return list.head
+    //     }
+    //     slow = slow.next
+    //     fast = fast.next.next || fast.next
 
-        if(!fast.next || !fast.next.next) {
-            return slow
-        }
-    }
+    //     if(!fast.next || !fast.next.next) {
+    //         return slow
+    //     }
+    // }
 
     // Course Soln
-    // let slow = fast = list.getFirst()
-    // while(fast.next && fast.next.next) {
-    //     slow = slow.next
-    //     fast = fast.next.next
-    // }
-    // return slow
+    let slow = fast = list.getFirst()
+    while(fast.next && fast.next.next) {
+        slow = slow.next
+        fast = fast.next.next
+    }
+    return slow
 
 }
 

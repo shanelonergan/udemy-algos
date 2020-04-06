@@ -13,9 +13,6 @@
 //   circular(l) // true
 
 function circular(list) {
-    if(!list.head) {
-        return false
-    }
 
     let slow = fast = list.getFirst()
 

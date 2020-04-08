@@ -25,11 +25,24 @@ class Node {
             this.left.insert(data)
         } else if (data < this.data) {
             this.left = newNode
-        } else if(data > this.data &&this.right) {
+        } else if(data > this.data && this.right) {
             this.right.insert(data)
         } else if(data > this.data) {
             this.right = newNode
         }
+    }
+
+    contains(data, node) {
+
+        if(this.data === data) {
+            return this
+        } else if(data < this.data && this.left) {
+            return this.left.contains(data)
+        } else if(data > this.data && this.right) {
+            return this.right.contains(data)
+        }
+
+        return null
 
     }
 }

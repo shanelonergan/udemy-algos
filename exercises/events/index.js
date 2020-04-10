@@ -19,13 +19,15 @@ class Events {
   // Trigger all callbacks associated
   // with a given eventName
   trigger(eventName) {
-    this.events[eventName].forEach(event => event.call())
+    this.events[eventName]
+    ? this.events[eventName].forEach(event => event())
+    : null
   }
 
   // Remove all event handlers associated
   // with the given eventName
   off(eventName) {
-    this.events[eventName] = []
+    delete this.events[eventName]
   }
 }
 

@@ -51,12 +51,12 @@ function merge(left, right) {
         ? results.push(left.shift())
         : results.push(right.shift())
     }
-    if(left.length) {
-        left.forEach(num => results.push(left.shift()))
-    } else if (right.length) {
-        right.forEach(num => results.push(right.shift()))
-    }
-    return results
+    // if(left.length) {
+    //     left.forEach(num => results.push(left.shift()))
+    // } else if (right.length) {
+    //     right.forEach(num => results.push(right.shift()))
+    // }
+    return [...results, ...left, ...right]
 }
 
 module.exports = { bubbleSort, selectionSort, mergeSort, merge };

@@ -86,7 +86,7 @@ function anagrams3(stringA, stringB) {
     return cleanStr(stringA) === cleanStr(stringB)
 }
 
-function anagrams = {
+function anagrams(strA, strB) {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
 
     function strip(str) {
@@ -94,10 +94,11 @@ function anagrams = {
     }
 
     function clean(str) {
-        const strippedStr = strip(str)
-
-        return strippedStr.split('').sort().join('')
+        const strippedArr = strip(str)
+        return strippedArr.sort().join('')
     }
+
+    return clean(strA) === clean(strB)
 }
 
 module.exports = anagrams;
